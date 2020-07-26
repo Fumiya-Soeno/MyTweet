@@ -15,7 +15,10 @@ class ViewController: UIViewController {
     // Do any additional setup after loading the view.
   }
   @IBAction func tapSaveBtn(_ sender: Any) {
-    
+    let memo = Memo()
+    memo.text = textView.text
+
+    StockMemos.postMemo(memo: memo)
   }
   @IBOutlet weak var textView: UITextView!
   
