@@ -55,6 +55,7 @@ class ViewController: UIViewController {
     genTweetPreviews(scrollView: scrollView, tweetParams: Params(text: ""))
   }
   
+  @IBOutlet weak var textView: UITextView!
   @IBAction func tapSaveBtn(_ sender: Any) {
     let memo = Memo()
     func postMemo(memo: Memo) {
@@ -63,9 +64,9 @@ class ViewController: UIViewController {
     }
     postMemo(memo: memo)
   }
-  
-  @IBOutlet weak var textView: UITextView!
-  
+  @IBAction func tapLoginBtn(_ sender: Any) {
+    performSegue(withIdentifier: "LoginSegue", sender: nil)
+  }
 
 }
 

@@ -15,6 +15,7 @@
 		32C0BDCC24CBE52E00DD9DED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32C0BDCA24CBE52E00DD9DED /* Main.storyboard */; };
 		32C0BDCE24CBE53000DD9DED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32C0BDCD24CBE53000DD9DED /* Assets.xcassets */; };
 		32C0BDD124CBE53000DD9DED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32C0BDCF24CBE53000DD9DED /* LaunchScreen.storyboard */; };
+		32FDB57224D3CF1D0033BED8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FDB57124D3CF1D0033BED8 /* LoginViewController.swift */; };
 		6F0EF3C84B1B2A5B4A701F62 /* Pods_MyTweet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A0269E3A7BDA3FCEA6C746 /* Pods_MyTweet.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		32C0BDCD24CBE53000DD9DED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32C0BDD024CBE53000DD9DED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32C0BDD224CBE53000DD9DED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32FDB57124D3CF1D0033BED8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		334196CAE4636FD8325DC53E /* Pods-MyTweet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTweet.release.xcconfig"; path = "Target Support Files/Pods-MyTweet/Pods-MyTweet.release.xcconfig"; sourceTree = "<group>"; };
 		C7F66DC9615E7D9EAA2EC235 /* Pods-MyTweet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTweet.debug.xcconfig"; path = "Target Support Files/Pods-MyTweet/Pods-MyTweet.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,6 +91,7 @@
 				32C0BDC624CBE52E00DD9DED /* SceneDelegate.swift */,
 				32C0BDC824CBE52E00DD9DED /* ViewController.swift */,
 				32C0BDCA24CBE52E00DD9DED /* Main.storyboard */,
+				32FDB57124D3CF1D0033BED8 /* LoginViewController.swift */,
 				32C0BDCD24CBE53000DD9DED /* Assets.xcassets */,
 				32C0BDCF24CBE53000DD9DED /* LaunchScreen.storyboard */,
 				32C0BDD224CBE53000DD9DED /* Info.plist */,
@@ -228,6 +231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32FDB57224D3CF1D0033BED8 /* LoginViewController.swift in Sources */,
 				326B7CAF24CBEB4C00FB6DE2 /* StockMemos.swift in Sources */,
 				32C0BDC924CBE52E00DD9DED /* ViewController.swift in Sources */,
 				32C0BDC524CBE52E00DD9DED /* AppDelegate.swift in Sources */,
