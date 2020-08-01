@@ -9,6 +9,23 @@ class ViewController: UIViewController {
     let text: String
   }
   
+  func loginConfirm(){
+    AF.request("http://46.51.241.223/api/memos/loginConfirm",
+               method: .post,
+               parameters: "",
+               encoder: JSONParameterEncoder.default).responseJSON { response in
+                switch response.result{
+                  case .success:
+                    guard let json = response.data else{
+                        return
+                    }
+                    print(JSON(json)["signedIn"])
+                  case .failure(let error):
+                    print(error)
+                }
+    }
+  }
+  
   func genTweetPreviews(scrollView: UIScrollView, tweetParams: Params) {
     var tweetPreviews = Array<UITextView>()
     let params = tweetParams
@@ -41,7 +58,7 @@ class ViewController: UIViewController {
                     for tweetPreview in tweetPreviews{
                       scrollView.addSubview(tweetPreview)
                     }
-
+                  
                   case .failure(let error):
                     print(error)
                 }
@@ -53,6 +70,7 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     self.view.addSubview(scrollView)
     genTweetPreviews(scrollView: scrollView, tweetParams: Params(text: ""))
+    print("loaded!")
   }
   
   @IBOutlet weak var textView: UITextView!
@@ -67,6 +85,11 @@ class ViewController: UIViewController {
   @IBAction func tapLoginBtn(_ sender: Any) {
     performSegue(withIdentifier: "LoginSegue", sender: nil)
   }
-
+  
+  @IBAction func loginConfirmButton(_ sender: Any) {
+    loginConfirm()
+  }
+  
+  
 }
 

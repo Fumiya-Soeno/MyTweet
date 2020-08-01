@@ -19,7 +19,13 @@ class LoginViewController: UIViewController {
                encoder: JSONParameterEncoder.default).responseJSON { response in
                 switch response.result{
                   case .success:
-                    print("success")
+                    guard let json = response.data else{
+                        return
+                    }
+                    print(JSON(json))
+                    ViewController().loadView()
+                    ViewController().viewDidLoad()
+                    self.navigationController?.popViewController(animated: true)
                   case .failure(let error):
                     print(error)
                 }

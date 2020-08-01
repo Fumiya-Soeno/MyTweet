@@ -60,7 +60,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="axZ-D4-kYd"/>
+                    <navigationItem key="navigationItem" id="axZ-D4-kYd">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Mpx-Aw-LKn">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ujv-V0-Ixv">
+                                <rect key="frame" x="302" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ログイン確認"/>
+                                <connections>
+                                    <action selector="loginConfirmButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UHa-k2-MAr"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="textView" destination="DPm-bx-XdC" id="K2n-7P-dnA"/>
                         <segue destination="iPt-5v-fgp" kind="push" identifier="LoginSegue" id="GJW-Oc-ZG5"/>
@@ -93,7 +104,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Fumiya.Soeno@gmail.com" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BWa-Ll-foS">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test000@text" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BWa-Ll-foS">
                                 <rect key="frame" x="20" y="250" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
