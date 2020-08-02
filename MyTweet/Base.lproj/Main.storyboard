@@ -10,13 +10,14 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyTweet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainStoryboard" id="BYZ-38-t0r" customClass="ViewController" customModule="MyTweet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Es-S9-T1u">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Es-S9-T1u">
                                 <rect key="frame" x="0.0" y="118" width="414" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="ツイートする">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -25,21 +26,17 @@
                                     <action selector="tapSaveBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xhp-pD-PVu"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="ツイートを入力" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DPm-bx-XdC">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="ツイートを入力" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DPm-bx-XdC">
                                 <rect key="frame" x="0.0" y="148" width="414" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="7Qu-a2-8Lk"/>
-                                </constraints>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5N0-4A-RPc">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5N0-4A-RPc">
                                 <rect key="frame" x="0.0" y="268" width="414" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Kbf-7h-snG"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="新規会員登録"/>
                                 <connections>
                                     <action selector="tapLoginBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yMI-eP-e7N"/>
@@ -47,32 +44,11 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6Es-S9-T1u" secondAttribute="trailing" id="8PQ-Yl-YS1"/>
-                            <constraint firstItem="5N0-4A-RPc" firstAttribute="top" secondItem="DPm-bx-XdC" secondAttribute="bottom" id="JOE-MP-Jw8"/>
-                            <constraint firstItem="6Es-S9-T1u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KXQ-zC-KQI"/>
-                            <constraint firstItem="DPm-bx-XdC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LgB-al-X9M"/>
-                            <constraint firstItem="DPm-bx-XdC" firstAttribute="top" secondItem="6Es-S9-T1u" secondAttribute="bottom" id="R3L-QR-XN8"/>
-                            <constraint firstItem="6Es-S9-T1u" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="U9j-rR-ezX"/>
-                            <constraint firstItem="DPm-bx-XdC" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Y7A-4O-NMD"/>
-                            <constraint firstItem="5N0-4A-RPc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bb7-OX-g9Z"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5N0-4A-RPc" secondAttribute="trailing" id="mkH-3y-rUX"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="axZ-D4-kYd">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="Mpx-Aw-LKn">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ujv-V0-Ixv">
-                                <rect key="frame" x="302" y="7" width="92" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="ログイン確認"/>
-                                <connections>
-                                    <action selector="loginConfirmButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UHa-k2-MAr"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="axZ-D4-kYd"/>
                     <connections>
+                        <outlet property="saveButton" destination="6Es-S9-T1u" id="gqt-vq-Zns"/>
                         <outlet property="textView" destination="DPm-bx-XdC" id="K2n-7P-dnA"/>
                         <segue destination="iPt-5v-fgp" kind="push" identifier="LoginSegue" id="GJW-Oc-ZG5"/>
                     </connections>

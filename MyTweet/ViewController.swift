@@ -3,6 +3,9 @@ import Alamofire
 import SwiftyJSON
 
 class ViewController: UIViewController {
+  let encrypt = encryptUserInformation()
+  @IBOutlet weak var textView: UITextView!
+  @IBOutlet weak var saveButton: UIButton!
   let screenSize = UIScreen.main.bounds.size
   let scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: 300, height: 500))
   struct Params: Encodable {
@@ -19,7 +22,11 @@ class ViewController: UIViewController {
                     guard let json = response.data else{
                         return
                     }
-                    print(JSON(json)["signedIn"])
+                    if JSON(json)["signedIn"] == true {
+                      print(true)
+                    } else {
+                      print(false)
+                    }
                   case .failure(let error):
                     print(error)
                 }
@@ -69,11 +76,11 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.view.addSubview(scrollView)
+    encrypt.encrypt()
     genTweetPreviews(scrollView: scrollView, tweetParams: Params(text: ""))
-    print("loaded!")
+    loginConfirm()
   }
   
-  @IBOutlet weak var textView: UITextView!
   @IBAction func tapSaveBtn(_ sender: Any) {
     let memo = Memo()
     func postMemo(memo: Memo) {
@@ -85,11 +92,5 @@ class ViewController: UIViewController {
   @IBAction func tapLoginBtn(_ sender: Any) {
     performSegue(withIdentifier: "LoginSegue", sender: nil)
   }
-  
-  @IBAction func loginConfirmButton(_ sender: Any) {
-    loginConfirm()
-  }
-  
-  
 }
 

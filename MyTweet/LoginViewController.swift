@@ -19,12 +19,9 @@ class LoginViewController: UIViewController {
                encoder: JSONParameterEncoder.default).responseJSON { response in
                 switch response.result{
                   case .success:
-                    guard let json = response.data else{
-                        return
-                    }
-                    print(JSON(json))
-                    ViewController().loadView()
-                    ViewController().viewDidLoad()
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "mainStoryboard")
+                    vc?.loadView()
+                    vc?.viewDidLoad()
                     self.navigationController?.popViewController(animated: true)
                   case .failure(let error):
                     print(error)
@@ -33,7 +30,7 @@ class LoginViewController: UIViewController {
   }
   
     override func viewDidLoad() {
-        super.viewDidLoad()
+      super.viewDidLoad()
       userNameText.placeholder = "ユーザー名"
       userIdText.placeholder = "ユーザーID"
       emailText.placeholder = "メールアドレス"
