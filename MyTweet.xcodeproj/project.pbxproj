@@ -16,6 +16,7 @@
 		32C0BDD124CBE53000DD9DED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32C0BDCF24CBE53000DD9DED /* LaunchScreen.storyboard */; };
 		32FDB57224D3CF1D0033BED8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FDB57124D3CF1D0033BED8 /* LoginViewController.swift */; };
 		32FDB57424D6854B0033BED8 /* encryptUserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FDB57324D6854B0033BED8 /* encryptUserInformation.swift */; };
+		32FDB57624D690F10033BED8 /* createUserCashe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FDB57524D690F00033BED8 /* createUserCashe.swift */; };
 		6F0EF3C84B1B2A5B4A701F62 /* Pods_MyTweet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A0269E3A7BDA3FCEA6C746 /* Pods_MyTweet.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		32C0BDD224CBE53000DD9DED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32FDB57124D3CF1D0033BED8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		32FDB57324D6854B0033BED8 /* encryptUserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = encryptUserInformation.swift; sourceTree = "<group>"; };
+		32FDB57524D690F00033BED8 /* createUserCashe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createUserCashe.swift; sourceTree = "<group>"; };
 		334196CAE4636FD8325DC53E /* Pods-MyTweet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTweet.release.xcconfig"; path = "Target Support Files/Pods-MyTweet/Pods-MyTweet.release.xcconfig"; sourceTree = "<group>"; };
 		C7F66DC9615E7D9EAA2EC235 /* Pods-MyTweet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTweet.debug.xcconfig"; path = "Target Support Files/Pods-MyTweet/Pods-MyTweet.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -52,6 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				32FDB57324D6854B0033BED8 /* encryptUserInformation.swift */,
+				32FDB57524D690F00033BED8 /* createUserCashe.swift */,
 			);
 			path = "Model Manager";
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			files = (
 				32FDB57224D3CF1D0033BED8 /* LoginViewController.swift in Sources */,
 				32FDB57424D6854B0033BED8 /* encryptUserInformation.swift in Sources */,
+				32FDB57624D690F10033BED8 /* createUserCashe.swift in Sources */,
 				32C0BDC924CBE52E00DD9DED /* ViewController.swift in Sources */,
 				32C0BDC524CBE52E00DD9DED /* AppDelegate.swift in Sources */,
 				32C0BDC724CBE52E00DD9DED /* SceneDelegate.swift in Sources */,

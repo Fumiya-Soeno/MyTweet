@@ -4,6 +4,7 @@ import SwiftyJSON
 
 class ViewController: UIViewController {
   let encrypt = encryptUserInformation()
+  let userCashe = createUserCashe()
   @IBOutlet weak var textView: UITextView!
   @IBOutlet weak var saveButton: UIButton!
   let screenSize = UIScreen.main.bounds.size
@@ -76,7 +77,8 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.view.addSubview(scrollView)
-    encrypt.encrypt()
+//    encrypt.readSecretKey()
+    userCashe.confirmCasheExist()
     genTweetPreviews(scrollView: scrollView, tweetParams: Params(text: ""))
     loginConfirm()
   }
@@ -91,6 +93,12 @@ class ViewController: UIViewController {
   }
   @IBAction func tapLoginBtn(_ sender: Any) {
     performSegue(withIdentifier: "LoginSegue", sender: nil)
+  }
+  @IBAction func deleteCasheButton(_ sender: Any) {
+    userCashe.deleteCashe()
+  }
+  @IBAction func decryptCasheButton(_ sender: Any) {
+    
   }
 }
 

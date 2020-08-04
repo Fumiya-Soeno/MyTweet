@@ -46,7 +46,28 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="axZ-D4-kYd"/>
+                    <navigationItem key="navigationItem" id="axZ-D4-kYd">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="vnO-Gw-qLT">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jgH-AJ-Bho">
+                                <rect key="frame" x="20" y="7" width="108" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="キャッシュ復号"/>
+                                <connections>
+                                    <action selector="decryptCasheButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eoi-eM-aP1"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Flu-LH-B3Q">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6Q2-j1-pP0">
+                                <rect key="frame" x="286" y="7" width="108" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="キャッシュ削除"/>
+                                <connections>
+                                    <action selector="deleteCasheButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KK7-td-9RI"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="saveButton" destination="6Es-S9-T1u" id="gqt-vq-Zns"/>
                         <outlet property="textView" destination="DPm-bx-XdC" id="K2n-7P-dnA"/>
@@ -74,6 +95,14 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gN7-uY-xGb">
+                                <rect key="frame" x="176" y="376" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="登録する"/>
+                                <connections>
+                                    <action selector="LoginButtonAction:" destination="iPt-5v-fgp" eventType="touchUpInside" id="4Xl-W1-SLA"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ソエノ" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5AU-vL-tvQ">
                                 <rect key="frame" x="20" y="166" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -92,6 +121,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="11111111" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qe6-11-XxM">
+                                <rect key="frame" x="20" y="533" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="11111111" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fjb-kk-jdv">
                                 <rect key="frame" x="20" y="334" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -104,12 +139,19 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gN7-uY-xGb">
-                                <rect key="frame" x="176" y="376" width="62" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test000@text" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fgj-Z2-ha0">
+                                <rect key="frame" x="20" y="491" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="登録する"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="guW-dG-ZCd">
+                                <rect key="frame" x="176" y="575" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ログイン"/>
                                 <connections>
-                                    <action selector="LoginButtonAction:" destination="iPt-5v-fgp" eventType="touchUpInside" id="4Xl-W1-SLA"/>
+                                    <action selector="LoginButtonAction:" destination="iPt-5v-fgp" eventType="touchUpInside" id="Z5g-Dn-6E7"/>
+                                    <action selector="loginButton:" destination="iPt-5v-fgp" eventType="touchUpInside" id="LoY-VQ-dsj"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -119,6 +161,8 @@
                     <navigationItem key="navigationItem" title="新規会員登録" id="fKT-Qz-Dqp"/>
                     <connections>
                         <outlet property="emailText" destination="BWa-Ll-foS" id="GEf-FN-eko"/>
+                        <outlet property="loginEmailText" destination="fgj-Z2-ha0" id="7bl-Yy-3Sf"/>
+                        <outlet property="loginPasswordText" destination="Qe6-11-XxM" id="hv4-e7-Vpe"/>
                         <outlet property="passwordConfirmationText" destination="Fjb-kk-jdv" id="bwL-ur-v1O"/>
                         <outlet property="passwordText" destination="yCV-uy-hxF" id="uQm-w2-NbX"/>
                         <outlet property="userIdText" destination="K7l-tI-Z72" id="PHy-LU-HL1"/>
