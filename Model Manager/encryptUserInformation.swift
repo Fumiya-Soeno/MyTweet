@@ -14,10 +14,6 @@ class encryptUserInformation {
     guard SecKeyIsAlgorithmSupported(privateKey, .decrypt, algorithm) else {
         throw error!.takeRetainedValue() as Error
     }
-//    //暗号文と秘密鍵のblock長を比較
-//    guard cipherTextString.count == SecKeyGetBlockSize(privateKey) else {
-//        throw error!.takeRetainedValue() as Error
-//    }
     //data型に変換した暗号文を復号
     guard let clearText = SecKeyCreateDecryptedData(
         privateKey,

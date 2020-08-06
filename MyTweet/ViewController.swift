@@ -9,6 +9,7 @@ class ViewController: UIViewController {
   @IBOutlet weak var saveButton: UIButton!
   let screenSize = UIScreen.main.bounds.size
   let scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: 300, height: 500))
+  
   struct Params: Encodable {
     let text: String
   }
@@ -24,12 +25,12 @@ class ViewController: UIViewController {
                         return
                     }
                     if JSON(json)["signedIn"] == true {
-                      print(true)
+                      print("signed in.")
                     } else {
-                      print(false)
+                      print("not signed in.")
                     }
                   case .failure(let error):
-                    print(error)
+                    print("loginConfirm Failed:\(error)")
                 }
     }
   }
@@ -77,10 +78,15 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.view.addSubview(scrollView)
-//    encrypt.readSecretKey()
-    userCashe.confirmCasheExist()
+    if userCashe.confirmCasheExist() == true {
+      userCashe.login()
+      loginButtonOutlet.setTitle("ログアウト", for: .normal)
+      loginButtonOutlet.setNeedsLayout()
+      loginButtonOutlet.layoutIfNeeded()
+      self.view.addSubview(loginButtonOutlet)
+      print(loginButtonOutlet.currentTitle!)
+    }
     genTweetPreviews(scrollView: scrollView, tweetParams: Params(text: ""))
-    loginConfirm()
   }
   
   @IBAction func tapSaveBtn(_ sender: Any) {
@@ -97,8 +103,27 @@ class ViewController: UIViewController {
   @IBAction func deleteCasheButton(_ sender: Any) {
     userCashe.deleteCashe()
   }
-  @IBAction func decryptCasheButton(_ sender: Any) {
-    
+  @IBOutlet weak var loginButtonOutlet: UIButton!
+  @IBAction func loginButtonAction(_ sender: Any) {
+    if userCashe.confirmCasheExist() == true {
+      AF.request("http://46.51.241.223/users/sign_out",
+                 method: .delete,
+                 parameters: "",
+                 encoder: JSONParameterEncoder.default).responseJSON { response in
+                  switch response.result{
+                    case .success:
+                      self.userCashe.deleteCashe()
+                    case .failure(let error):
+                      print(error)
+                  }
+      }
+    } else {
+      print("login")
+    }
   }
+  
+  @IBOutlet weak var dummyLabel: UILabel!
+  
+  
 }
 

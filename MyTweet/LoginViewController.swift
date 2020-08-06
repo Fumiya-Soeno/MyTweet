@@ -27,10 +27,7 @@ class LoginViewController: UIViewController {
                encoder: JSONParameterEncoder.default).responseJSON { response in
                 switch response.result{
                   case .success:
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "mainStoryboard")
-                    vc?.loadView()
-                    vc?.viewDidLoad()
-                    self.navigationController?.popViewController(animated: true)
+                    print("success")
                   case .failure(let error):
                     print(error)
                 }
@@ -55,17 +52,14 @@ class LoginViewController: UIViewController {
   @IBOutlet weak var passwordConfirmationText: UITextField!
   
   @IBAction func LoginButtonAction(_ sender: Any) {
-    let login = Login()
-    login.account_name = userNameText.text ?? ""
-    login.account_id = userIdText.text ?? ""
-    login.email = emailText.text ?? ""
-    login.password = passwordText.text ?? ""
-    login.password_confirmation = passwordConfirmationText.text ?? ""
     CreateNewUser(userParams: LoginViewController.loginParams(account_name: userNameText.text ?? "", account_id: userIdText.text ?? "", email: emailText.text ?? "", password: passwordText.text ?? "", password_confirmation: passwordConfirmationText.text ?? ""))
     do {
       let encryptedPassword = try userInfo.encrypt(publicKey: userInfo.generateKeyPairFunction() , plainText: passwordText.text ?? "")
       userCashe.createCashe(email: emailText.text ?? "", encryptedPassword: encryptedPassword)
-      print("encryptedPassword:\(encryptedPassword)")
+      let vc = self.storyboard?.instantiateViewController(withIdentifier: "mainStoryboard")
+      vc?.loadView()
+      vc?.viewDidLoad()
+      self.navigationController?.popViewController(animated: true)
     } catch {
       return
     }
@@ -75,19 +69,27 @@ class LoginViewController: UIViewController {
   @IBOutlet weak var loginPasswordText: UITextField!
   @IBAction func loginButton(_ sender: Any) {
     let params = LoginViewController.sessionParams(email: loginEmailText.text ?? "", password: loginPasswordText.text ?? "")
+
     AF.request("http://46.51.241.223/users/sign_in",
                method: .post,
                parameters: params,
                encoder: JSONParameterEncoder.default).responseJSON { response in
                 switch response.result{
                   case .success:
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "mainStoryboard")
-                    vc?.loadView()
-                    vc?.viewDidLoad()
-                    self.navigationController?.popViewController(animated: true)
+                  print("success")
                   case .failure(let error):
                     print(error)
                 }
+    }
+    do {
+      let encryptedPassword = try userInfo.encrypt(publicKey: userInfo.generateKeyPairFunction() , plainText: loginPasswordText.text ?? "")
+      userCashe.createCashe(email: loginEmailText.text ?? "", encryptedPassword: encryptedPassword)
+      let vc = self.storyboard?.instantiateViewController(withIdentifier: "mainStoryboard")
+      vc?.loadView()
+      vc?.viewDidLoad()
+      self.navigationController?.popViewController(animated: true)
+    } catch {
+      return
     }
   }
 }

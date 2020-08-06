@@ -1,22 +1,43 @@
 import Foundation
+import Alamofire
+import SwiftyJSON
 
 class createUserCashe {
   let encrypt = encryptUserInformation()
+  
+  // ログイン
+  func login() {
+    let email = readCashe().0
+    let encryptPassword = readCashe().1
+    do{
+      let privateKey = try encrypt.readSecretKeyFunction()
+      let password = try encrypt.decrypt(cipherTextString: encryptPassword, privateKey: privateKey)
+      let params = LoginViewController.sessionParams(email: email, password: password)
+      AF.request("http://46.51.241.223/users/sign_in",
+                 method: .post,
+                 parameters: params,
+                 encoder: JSONParameterEncoder.default).responseJSON { response in
+                  switch response.result{
+                    case .success:
+                      ViewController().loginConfirm()
+                    case .failure(let error):
+                      print("confirmCasheExist Failed:\(error)")
+                  }
+      }
+    } catch let error as NSError {
+      print(error)
+    }
+  }
+  
   // キャッシュの存在確認とログイン
-  func confirmCasheExist() {
+  func confirmCasheExist() -> (Bool) {
     let path = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first! + "/UserCashe"
     if FileManager.default.fileExists(atPath: path) {
       print("cashes exist.")
-      let email = readCashe().0
-      let encryptPassword = readCashe().1
-      do{
-        let privateKey = try encrypt.readSecretKeyFunction()
-        let password = try encrypt.decrypt(cipherTextString: encryptPassword, privateKey: privateKey)
-      } catch let error as NSError {
-        print(error)
-      }
+      return true
     } else {
       print("cashes don't exist.")
+      return false
     }
   }
   
@@ -48,7 +69,6 @@ class createUserCashe {
     } catch let error as NSError {
       print(error)
     }
-    
     // 保存先のパスを作成
     let saveEmailPath = path + "/UserEmail.txt"
     let savePasswordPath = path + "/UserPassword.txt"
@@ -59,29 +79,12 @@ class createUserCashe {
     } catch let error as NSError {
       print("failed to write: \(error)")
     }
-    // ファイルから読み込みんで表示
-    let emailFile = FileHandle(forReadingAtPath: saveEmailPath)!
-    let passwordFile = FileHandle(forReadingAtPath: savePasswordPath)!
-    
-    let emailContentData = emailFile.readDataToEndOfFile()
-    let passwordContentData = passwordFile.readDataToEndOfFile()
-    
-    let emailContentString = String(data: emailContentData, encoding: .utf8)!
-    let passwordContentString = String(data: passwordContentData, encoding: .utf8)!
-    
-    print("emailContentString:\(emailContentString)")
-    print("passwordContentString:\(passwordContentString)")
-    
-    passwordFile.closeFile()
-    emailFile.closeFile()
-    
   }
   
   func readCashe() -> (String, String){
     let path = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first! + "/UserCashe"
     let saveEmailPath = path + "/UserEmail.txt"
     let savePasswordPath = path + "/UserPassword.txt"
-    print(path)
     let emailFile = FileHandle(forReadingAtPath: saveEmailPath)!
     let passwordFile = FileHandle(forReadingAtPath: savePasswordPath)!
     let emailContentData = emailFile.readDataToEndOfFile()

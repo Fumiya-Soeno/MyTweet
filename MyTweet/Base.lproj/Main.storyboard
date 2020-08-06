@@ -42,6 +42,13 @@
                                     <action selector="tapLoginBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yMI-eP-e7N"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aih-Zn-rnX">
+                                <rect key="frame" x="186" y="89" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -51,9 +58,9 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jgH-AJ-Bho">
                                 <rect key="frame" x="20" y="7" width="108" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="キャッシュ復号"/>
+                                <state key="normal" title="ログイン"/>
                                 <connections>
-                                    <action selector="decryptCasheButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eoi-eM-aP1"/>
+                                    <action selector="loginButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EIC-wW-pMP"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -69,6 +76,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="dummyLabel" destination="Aih-Zn-rnX" id="mRe-hH-7B9"/>
+                        <outlet property="loginButtonOutlet" destination="jgH-AJ-Bho" id="iAH-Mz-OzB"/>
                         <outlet property="saveButton" destination="6Es-S9-T1u" id="gqt-vq-Zns"/>
                         <outlet property="textView" destination="DPm-bx-XdC" id="K2n-7P-dnA"/>
                         <segue destination="iPt-5v-fgp" kind="push" identifier="LoginSegue" id="GJW-Oc-ZG5"/>
@@ -150,7 +159,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="ログイン"/>
                                 <connections>
-                                    <action selector="LoginButtonAction:" destination="iPt-5v-fgp" eventType="touchUpInside" id="Z5g-Dn-6E7"/>
                                     <action selector="loginButton:" destination="iPt-5v-fgp" eventType="touchUpInside" id="LoY-VQ-dsj"/>
                                 </connections>
                             </button>

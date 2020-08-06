@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		326B7CB124CBEB5A00FB6DE2 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326B7CB024CBEB5A00FB6DE2 /* Memo.swift */; };
+		32B6E1D824DA4CC100AA0C02 /* AlamofireRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B6E1D724DA4CC100AA0C02 /* AlamofireRequest.swift */; };
 		32C0BDC524CBE52E00DD9DED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C0BDC424CBE52E00DD9DED /* AppDelegate.swift */; };
 		32C0BDC724CBE52E00DD9DED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C0BDC624CBE52E00DD9DED /* SceneDelegate.swift */; };
 		32C0BDC924CBE52E00DD9DED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C0BDC824CBE52E00DD9DED /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		26A0269E3A7BDA3FCEA6C746 /* Pods_MyTweet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTweet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		326B7CB024CBEB5A00FB6DE2 /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
+		32B6E1D724DA4CC100AA0C02 /* AlamofireRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireRequest.swift; sourceTree = "<group>"; };
 		32C0BDC124CBE52E00DD9DED /* MyTweet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTweet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32C0BDC424CBE52E00DD9DED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32C0BDC624CBE52E00DD9DED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			children = (
 				32FDB57324D6854B0033BED8 /* encryptUserInformation.swift */,
 				32FDB57524D690F00033BED8 /* createUserCashe.swift */,
+				32B6E1D724DA4CC100AA0C02 /* AlamofireRequest.swift */,
 			);
 			path = "Model Manager";
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 			files = (
 				32FDB57224D3CF1D0033BED8 /* LoginViewController.swift in Sources */,
 				32FDB57424D6854B0033BED8 /* encryptUserInformation.swift in Sources */,
+				32B6E1D824DA4CC100AA0C02 /* AlamofireRequest.swift in Sources */,
 				32FDB57624D690F10033BED8 /* createUserCashe.swift in Sources */,
 				32C0BDC924CBE52E00DD9DED /* ViewController.swift in Sources */,
 				32C0BDC524CBE52E00DD9DED /* AppDelegate.swift in Sources */,
